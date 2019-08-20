@@ -4,9 +4,20 @@
 // that manipulates variables defined in the outer scope.
 // The outer scope can be a parent function, or the top level of the script.
 
+let numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+function calculator(arr) {
+  let random = arr[Math.floor(Math.random() * arr.length)];
+  
+  return function squareNums() {
+    let square = random * random;
+    console.log(`The square of ${random} is ${square}`)
+    return square;
+  };
+}
+
+calculator(numbers)();
 
 /* STRETCH PROBLEMS, Do not attempt until you have completed all previous tasks for today's project files */
-
 
 // ==== Challenge 2: Implement a "counter maker" function ====
 const counterMaker = () => {
