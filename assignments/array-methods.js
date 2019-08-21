@@ -470,19 +470,43 @@ console.log(firstNamesAllCaps);
 
 // ==== Challenge 3: Use .filter() ====
 // The large shirts won't be available for the event due to an ordering issue. We need a filtered version of the runners array, containing only those runners with large sized shirts so they can choose a different size. This will be an array of objects.
-let runnersLargeSizeShirt = runners.filter(runner => runner.shirt_size === "L")
+let runnersLargeSizeShirt = runners.filter(runner => runner.shirt_size === "L");
 console.log(runnersLargeSizeShirt);
 
 // ==== Challenge 4: Use .reduce() ====
 // The donations need to be tallied up and reported for tax purposes. Add up all the donations and save the total into a ticketPriceTotal variable.
-let ticketPriceTotal = runners.reduce((total, runner) => total + runner.donation, 0)
+let ticketPriceTotal = runners.reduce(
+  (total, runner) => total + runner.donation,
+  0
+);
 console.log(ticketPriceTotal);
 
 // ==== Challenge 5: Be Creative ====
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to create and then solve 3 unique problems using one or many of the array methods listed above.
 
 // Problem 1
+let goats = ["Lionel Messi", "Tiger Woods", "Novak Djokovic", "LeBron James"];
+goats.forEach(goat =>
+  console.log(`${goat} is the greatest player in his sport.`)
+);
 
 // Problem 2
+let testScores = [45, 57, 67, 89, 95, 75];
+
+let passmark =
+  testScores.reduce((acc, score) => acc + score, 0) / testScores.length;
+
+console.log(`The passmark for the previous exam is ${passmark}`);
 
 // Problem 3
+
+let studentScores = [
+  { name: "anne", score: 45 },
+  { name: "ken", score: 57 },
+  { name: "rita", score: 67 },
+  { name: "walela", score: 89 },
+  { name: "imali", score: 95 },
+  { name: "shosho", score: 75 }
+];
+let passed = studentScores.filter(student => student.score >= passmark);
+passed.forEach(s => console.log(`${s.name} has passed their exam!`));
